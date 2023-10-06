@@ -2,6 +2,7 @@
 import React from 'react'
 import { useEffect,useState} from 'react'
 import PromptCard from './PromptCard'
+import Link from 'next/link'
 
 const PromptCardList = ({data, handleTagClick}) => {
   return (
@@ -36,7 +37,7 @@ function Feed() {
 
   return (
     <section className='feed'>
-      <form className='relative w-full flex-center'>
+      <form className='relative w-full flex-center flex-col'>
         <input
         type='text'
         placeholder='search your desired prompt'
@@ -44,6 +45,11 @@ function Feed() {
         onChange={() => {}}
         required
         className='search_input peer'/>
+        <p className='desc '>OR</p>
+        <Link href='/generate-with-ai'
+         className='w-2/5 my-5 mx-1 black_btn'>
+          Generate with AI
+        </Link>
 
       </form>
       <PromptCardList

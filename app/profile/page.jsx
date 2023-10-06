@@ -2,14 +2,16 @@
 import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import  MyProfile  from '@components/Profile'
+import  Profile  from '@components/Profile'
 
-const Profile= () => {
+
+const MyProfile= () => {
 
 
    
-    const {data : session} = useSession
+    const {data : session} = useSession()
     const [posts, setPosts] = useState([])
+    console.log(session?.user.id);
     const handleEdit = () => {
 
     }
@@ -26,7 +28,7 @@ const Profile= () => {
       }, [])
 
   return (
-    <MyProfile
+    <Profile
     name="My"
     desc="Welcome to your personalized profile page"
     data={posts}
@@ -35,7 +37,7 @@ const Profile= () => {
   )
 }
 
-export default Profile
+export default MyProfile
 
 
 

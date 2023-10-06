@@ -42,6 +42,7 @@ function PromptCard({post , handleTagClick, handleEdit, handleDelete}) {
           src={copied === post.prompt ? '/assets/icons/tick.svg' : '/assets/icons/copy.svg'}
           width={15}
           height={15}
+          alt="copy"
           onClick={handleCopy}
           />
 
